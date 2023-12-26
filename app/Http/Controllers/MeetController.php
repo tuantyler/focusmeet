@@ -23,7 +23,7 @@ class MeetController extends Controller
     }
 
     public function index() {
-        return view("admin.index");
+        return view("admin.meet.index");
     }
 
     public function accessMeeting() {
@@ -55,7 +55,7 @@ class MeetController extends Controller
     public function listMeet() {
         $meetings = Meet::where("user_id", auth()->id())->withCount('meetings_log')->get();
 
-        return view("admin.listmeet", compact("meetings"));
+        return view("admin.meet.list", compact("meetings"));
     }
 
     public function updateMeetingName(Request $request) {

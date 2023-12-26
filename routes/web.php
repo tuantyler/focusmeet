@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VTourUserController as user;
 use App\Http\Controllers\MeetController as meet;
 
 Auth::routes();
