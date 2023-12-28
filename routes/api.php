@@ -26,6 +26,10 @@ Route::middleware(['api', 'auth:web'])->group(function () {
             Route::put('name', [meet::class, "updateName"])->name('meet.update.name');
         });
 
+        Route::prefix('focused')->group(function () {
+            Route::post('create', [meet::class, "createFocusedMeet"])->name('api.meet.focused.create');
+        });
+
         Route::prefix('list')->group(function () {
             Route::get('participants/{meeting_id}', [meet::class, "listParticipants"]);
         });   

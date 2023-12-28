@@ -25,7 +25,14 @@ class Meet extends Model
     protected $fillable = [
         'meeting_id',
         'meeting_name',
-        'user_id'
+        'user_id',
+        'start_time',
+        'end_time',
+        'all_days',
+        'allow_freely_join',
+        'enable_member_focus_view',
+        'enable_member_list_view',
+        'repeat_pattern'
     ];
 
     public function user_id()

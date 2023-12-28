@@ -14,7 +14,7 @@
                         <a class="nav-link {{ Route::is('quickmeet') ? 'active' : '' }}" href="{{ route('index') }}"><i class="fa fa-fw fa-user-circle"></i>Quick Meeting</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link {{ Route::is('quickmeet') ? 'active' : '' }}" href="{{ route('index') }}"><i class="fa fa-fw fa-user-circle"></i>Scheduled Meeting</a>
+                        <a class="nav-link {{ Route::is('meet.focused.create') ? 'active' : '' }}" href="{{ route('meet.focused.create') }}"><i class="fa fa-fw fa-plus-square"></i>Create Focused Meeting</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link {{ Route::is('listMeet') ? 'active' : '' }}" href="{{ route('listMeet') }}"><i class="fa fa-fw fa-user-circle"></i>List Meeting</a>

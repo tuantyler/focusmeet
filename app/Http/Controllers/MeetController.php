@@ -62,7 +62,17 @@ class MeetController extends Controller
         dd($request->all());
     }
 
-    public function scheduleMeet() {
-        return view("admin.meet.schedule");
+    public function meetFocusedCreate() {
+        $meeting_id = Str::orderedUuid();
+        session()->put("meeting_id", $meeting_id);
+        
+        return view("admin.meet.focused.create", compact("meeting_id"));
+    }
+
+    public function meetFocusedEdit($meeting_id) {
+        $meeting = Meet::where("meeting_id", $meeting_id)->first();
+        $this->authorize('userOwnedMeeting', $meeting);
+
+        return view("admin.meet.focused.edit", compact("meeting"));
     }
 }

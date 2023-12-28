@@ -18,9 +18,10 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
         Route::get("", [meet::class, "accessMeeting"])->name("meet");
         Route::get("create", [meet::class, "createMeet"])->name("createMeet");
         Route::get("list", [meet::class, "listMeet"])->name("listMeet");
-        Route::get("schedule", [meet::class, "scheduleMeet"]);
+        Route::prefix('focused')->group(function () {
+            Route::get("create", [meet::class, "meetFocusedCreate"])->name("meet.focused.create");
+            Route::get("edit/{meeting_id}", [meet::class, "meetFocusedEdit"])->name("meet.focused.edit");
+        });
     });
-
-
     Route::get("/attendance_taker", [meet::class, "attendanceTaker"])->name("attendance_taker");
 });
